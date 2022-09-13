@@ -8,19 +8,46 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Map<String, dynamic> map = {};
+  String time = 'loading...';
+
   @override
   Widget build(BuildContext context) {
+    map = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    time = map['time'];
+
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        children: <Widget>[
-          FlatButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/location');
-              },
-              icon: Icon(Icons.edit_location),
-              label: Text("Edit Location"))
-        ],
+          child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
+        child: Column(
+          children: <Widget>[
+            FlatButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/location');
+                },
+                icon: const Icon(Icons.edit_location),
+                label: const Text("Edit Location")),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  map['location'],
+                  style: const TextStyle(
+                      fontSize: 28,
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+            const SizedBox(height: 20),
+            Text(
+              map['time'],
+              style: const TextStyle(fontSize: 66),
+            )
+          ],
+        ),
       )),
     );
   }

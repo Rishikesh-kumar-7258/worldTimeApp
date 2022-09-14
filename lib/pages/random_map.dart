@@ -4,7 +4,7 @@ import 'package:countries_world_map/countries_world_map.dart';
 import 'package:flutter/material.dart';
 
 class RandomWorldMapGenrator extends StatefulWidget {
-  RandomWorldMapGenrator({Key? key}) : super(key: key);
+  const RandomWorldMapGenrator({Key? key}) : super(key: key);
 
   @override
   _RandomWorldMapGenratorState createState() => _RandomWorldMapGenratorState();

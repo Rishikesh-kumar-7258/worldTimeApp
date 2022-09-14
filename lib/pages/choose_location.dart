@@ -25,16 +25,12 @@ class _ChooseLocationState extends State<ChooseLocation>
           title: const Text("Choose Location"),
           centerTitle: true,
         ),
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: TabBarView(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: controller,
-              children: [
-                RandomWorldMapGenrator(),
-                const SupportedCountriesMap()
-              ]),
-        ));
+        body: TabBarView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: controller,
+            children: const [
+              RandomWorldMapGenrator(),
+              SupportedCountriesMap()
+            ]));
   }
 }

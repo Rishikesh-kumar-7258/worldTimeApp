@@ -71,10 +71,10 @@ class _CountryPageState extends State<CountryPage> {
       appBar: AppBar(
         backgroundColor: Colors.grey.shade50,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.blue),
+        iconTheme: const IconThemeData(color: Colors.blue),
         title: Text(
           widget.country.toUpperCase() + ' - ' + state,
-          style: TextStyle(color: Colors.blue),
+          style: const TextStyle(color: Colors.blue),
         ),
       ),
       body: Center(child: countryBuilder(widget.country)),
